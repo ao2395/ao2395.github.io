@@ -1,13 +1,128 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Practice</title>
-</head>
-<body>
-    <h1> I am Unemployed</h1>
-    <a href="https://github.com/ao2395"> GITHUB</a>
-    
-</body>
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <!-- load in the p5 core library -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.min.js"></script>
+
+    <!-- load in the p5 sound library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.js"></script>
+
+    <!-- your custom sketch code -->
+    <script src="sketch.js"></script>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: grey;
+        font-family: Arial, sans-serif;
+      }
+      
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgb(226, 185, 20);
+        color: white;
+        padding: 9px 20px;
+        font-size: 25px;
+        height: 55px;
+        box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+      }
+
+      .header a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+      }
+
+      .header p {
+        margin: 0;
+        font-size: 20px;
+        flex-grow: 1;
+        text-align: center;
+      }
+
+      .canvas-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: calc(100vh - 100px);
+        padding: 0 30px;
+      }
+
+      .text-left, .text-right {
+        font-size: 18px;
+        width: 25%;
+        text-align: left;
+        line-height: 1.6;
+      }
+
+      .text-left {
+        margin-right: 20px;
+      }
+
+      .text-right {
+        margin-left: 20px;
+      }
+
+      .content {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      canvas {
+        display: block;
+        max-width: 100%;
+      }
+      
+      @media screen and (max-width: 768px) {
+        .text-left, .text-right {
+          width: 100%;
+          margin: 10px 0;
+        }
+        
+        .canvas-container {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <a href="https://i6.cims.nyu.edu/~ao2395/interactive/">Home</a>
+      <p>Assignment 2: Breakout!</p>
+    </div>
+
+    <div class="canvas-container">
+      <div class="text-left">
+        <p><strong>Tutorial:</strong><br>
+          1. Left click to begin playing.<br>
+          2. A and D to move the paddle left and right.<br>
+          3. Keep the ball in play!<br>
+          4. Each Treasure grants point(s)<br>
+          5. The ball going out of play results in losing all your points.<br>
+          6. Left click again to restart the game after a loss.<br>
+        </p>
+      </div>
+      <div id="content" class="content">
+      </div>
+      <div class="text-right">
+        <p><strong>Technical Specifications:</strong><br>
+          1. Each time the ball bounces off a border, its speed increases.<br>
+          2. Hitting the paddle near the edges produces 'softer' rebounds.<br>
+          3. Hitting the paddle from the middle produces 'sharper' rebounds.<br>
+          4. Points are based on the ball speed, up to 3 points.<br>
+        </p>
+      </div>
+    </div>
+  </body>
 </html>
