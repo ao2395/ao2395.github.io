@@ -1,128 +1,50 @@
-<!doctype html>
-<html lang="en-us">
-  <head>
-    <!-- load in the p5 core library -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Film Screening | My Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.min.js"></script>
+  <script src="sketch.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
 
-    <!-- load in the p5 sound library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.js"></script>
+  <header>
+    <h1>Film Showcase</h1>
+    <nav>
+      <a href="../index.html" id="backButton">← Back to Portfolio</a>
+    </nav>
+  </header>
 
-    <!-- your custom sketch code -->
-    <script src="sketch.js"></script>
+  <div id="parallaxContainer">
+    <canvas id="p5Canvas"></canvas>
+  </div>
 
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-      
-      body, html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        background-color: grey;
-        font-family: Arial, sans-serif;
-      }
-      
-      .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: rgb(226, 185, 20);
-        color: white;
-        padding: 9px 20px;
-        font-size: 25px;
-        height: 55px;
-        box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
-      }
+  <main id="filmShowcase">
+    <section id="intro">
+      <h2><span id="typedTitle"></span></h2>
+      <p><span id="typedDescription"></span></p>
+    </section>
 
-      .header a {
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
-      }
+    <section id="filmGallery">
+      <h2>Films</h2>
+      <div id="filmRoll"></div>
 
-      .header p {
-        margin: 0;
-        font-size: 20px;
-        flex-grow: 1;
-        text-align: center;
-      }
+    </section>
+  </main>
 
-      .canvas-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        height: calc(100vh - 100px);
-        padding: 0 30px;
-      }
-
-      .text-left, .text-right {
-        font-size: 18px;
-        width: 25%;
-        text-align: left;
-        line-height: 1.6;
-      }
-
-      .text-left {
-        margin-right: 20px;
-      }
-
-      .text-right {
-        margin-left: 20px;
-      }
-
-      .content {
-        flex-grow: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      canvas {
-        display: block;
-        max-width: 100%;
-      }
-      
-      @media screen and (max-width: 768px) {
-        .text-left, .text-right {
-          width: 100%;
-          margin: 10px 0;
-        }
-        
-        .canvas-container {
-          flex-direction: column;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="header">
-      <a href="https://i6.cims.nyu.edu/~ao2395/interactive/">Home</a>
-      <p>Assignment 2: Breakout!</p>
+  <div id="filmModal" class="hidden">
+    <div class="modal-content">
+      <h2 id="filmTitle"></h2>
+      <p id="filmDescription"></p>
+      <div id="filmVideoContainer"></div> 
+      <button id="closeModal">Close</button>
     </div>
+  </div>
+  
 
-    <div class="canvas-container">
-      <div class="text-left">
-        <p><strong>Tutorial:</strong><br>
-          1. Left click to begin playing.<br>
-          2. A and D to move the paddle left and right.<br>
-          3. Keep the ball in play!<br>
-          4. Each Treasure grants point(s)<br>
-          5. The ball going out of play results in losing all your points.<br>
-          6. Left click again to restart the game after a loss.<br>
-        </p>
-      </div>
-      <div id="content" class="content">
-      </div>
-      <div class="text-right">
-        <p><strong>Technical Specifications:</strong><br>
-          1. Each time the ball bounces off a border, its speed increases.<br>
-          2. Hitting the paddle near the edges produces 'softer' rebounds.<br>
-          3. Hitting the paddle from the middle produces 'sharper' rebounds.<br>
-          4. Points are based on the ball speed, up to 3 points.<br>
-        </p>
-      </div>
-    </div>
-  </body>
+</body>
 </html>

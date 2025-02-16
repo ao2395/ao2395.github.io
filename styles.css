@@ -1,0 +1,162 @@
+:root {
+  --bg-color: #0a0a0a;
+  --text-color: #f1faee;
+  --accent-color: #ffffff;
+  --transition-time: 0.5s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+header h1 {
+  color: var(--accent-color);
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: var(--accent-color);
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+#filmGallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.film-card {
+  width: 600px; /* Make the film card much bigger */
+  height: auto;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Keep hover effect but adjust for new size */
+.film-card:hover {
+  transform: scale(1.05);
+  background: var(--accent-color);
+  color: black;
+}
+
+/* Make the image larger and properly fit */
+.film-card img {
+  width: 100%;
+  height: 400px; /* Match the film card */
+  object-fit: cover; /* Ensure it scales properly */
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Ensure text inside the card scales well */
+.film-card h3 {
+  font-size: 2rem; /* Bigger text */
+  margin-top: 15px;
+}
+
+/* Adjust modal size to match */
+#filmModal {
+  width: 80vw;
+  max-width: 1000px;
+  padding: 30px;
+}
+
+/* Make embedded YouTube video bigger */
+#filmVideoContainer iframe {
+  width: 100%;
+  height: 500px; /* Bigger video */
+}
+
+
+
+
+
+/* Popup Modal Fix */
+#filmModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 90vw;
+  max-width: 800px;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 15px rgba(255, 71, 87, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#filmModal.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  padding: 10px;
+}
+
+#filmVideo {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+#closeModal {
+  margin-top: 15px;
+  background: var(--accent-color);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#closeModal:hover {
+  background: #ff6b81;
+}
