@@ -58,8 +58,8 @@ document.addEventListener("DOMContentLoaded", loadFilms);
 document.addEventListener("DOMContentLoaded", () => {
   typeText("Welcome to My Film Showcase", "typedTitle", 50, () => {
     typeText("Explore some of my short films and creative works.", "typedDescription", 30, () => {
-      // Add this new typing animation for interaction prompts
-      typeText("▼ Scroll to discover films | Click background to warp stars ▼", "interactionPrompts", 40);
+      typeText("▼ Scroll to discover films | Click background to warp stars ▼", "typedDescription", 40, () => {
+        });
     });
   });
 });
