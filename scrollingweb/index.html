@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forest Path Adventure</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <div id="nav">
+        <a href="#path1"><div class="nav-btn" id="first-page" title="Start of the path"></div></a>
+        <a href="#text1"><div class="nav-btn" id="second-page" title="First rest area"></div></a>
+        <a href="#path2"><div class="nav-btn" id="third-page" title="Middle of the path"></div></a>
+        <a href="#text2"><div class="nav-btn" id="fourth-page" title="Second rest area"></div></a>
+        <a href="#path3"><div class="nav-btn" id="fifth-page" title="End of the path"></div></a>
+    </div>
+
+    <!-- Progress tracker -->
+    <div id="progress-tracker">
+        <div id="progress-indicator"></div>
+    </div>
+
+    <!-- Time indicator -->
+    <div id="time-indicator">Morning</div>
+
+    <!-- Time of day overlay -->
+    <div id="time-overlay"></div>
+
+    <!-- Weather effects container -->
+    <div id="weather-effects"></div>
+    
+    <!-- Path sections -->
+    <div id="path1" class="path-section">
+        <img src="img/path2.png" alt="Forest path start" style="max-height: 100vh; position: relative; z-index: 1;">
+        
+        <!-- Forest animals with conservation messages -->
+        <img class="animal" src="img/path2.png" alt="Squirrel" style="width: 50px; right: 25%; top: 30%;" 
+             data-message="I plant forgotten seeds that grow into new trees! We're nature's gardeners.">
+        <img class="animal" src="img/path2.png" alt="Rabbit" style="width: 40px; left: 30%; bottom: 25%;" 
+             data-message="Our habitats are shrinking. Please help protect our homes!">
+    </div>
+
+    <div id="text1" class="text-section">
+        <div class="text-container">
+            <h2>The Living Forest: Our Responsibility</h2>
+            <p class="text">As you venture deeper into this ancient woodland, consider that forests like these cover only 31% of our planet, yet they're home to 80% of Earth's land biodiversity. Each towering tree you see works tirelessly, absorbing carbon dioxide and releasing the oxygen we breathe.</p>
+            <p class="text">These complex ecosystems are in danger - we lose 10 million hectares of forest each year to deforestation. From the smallest insects to the largest mammals, countless species depend on these environments. What can we do as individuals to protect these irreplaceable natural treasures?</p>
+        </div>
+    </div>
+
+    <div id="path2" class="path-section">
+        <img src="img/path3.png" alt="Forest path middle" style="max-height: 100vh; position: relative; z-index: 1;">
+        
+        <!-- Forest animals with conservation messages -->
+        <img class="animal" src="img/path3.png" alt="Fox" style="width: 60px; left: 20%; top: 40%;" 
+             data-message="Top predators like me keep ecosystems balanced. When we disappear, everything changes.">
+        <img class="animal" src="img/path3.png" alt="Bird" style="width: 30px; right: 35%; top: 15%;" 
+             data-message="Climate change affects migration patterns. Many of my friends get lost now.">
+    </div>
+
+    <div id="text2" class="text-section">
+        <div class="text-container">
+            <h2>Conservation in Action</h2>
+            <p class="text">This clearing represents the delicate balance we must achieve - spaces where humans can appreciate nature while ensuring its protection. Sustainable forestry practices, habitat preservation, and responsible tourism are essential. When we protect forests, we safeguard water resources, prevent soil erosion, and maintain stable climates.</p>
+            <p class="text">What might seem like small actions - reducing paper consumption, choosing sustainably sourced wood products, supporting conservation organizations - collectively create significant impact. Indigenous communities have preserved these forests for generations through careful stewardship. Their traditional knowledge reminds us that we don't own these lands; we're merely their temporary guardians.</p>
+        </div>
+    </div>
+
+    <div id="path3" class="path-section">
+        <img src="img/path4.png" alt="Forest path end" style="max-height: 100vh; position: relative; z-index: 1;">
+        
+        <!-- Forest animals with conservation messages -->
+        <img class="animal" src="img/path4.png" alt="Deer" style="width: 70px; right: 15%; bottom: 30%;" 
+             data-message="Old-growth forests like this one take centuries to develop. Once gone, they're irreplaceable.">
+        <img class="animal" src="img/path4.png" alt="Owl" style="width: 45px; left: 25%; top: 20%;" 
+             data-message="I need ancient trees with hollows to nest. Please protect old trees!">
+    </div>
+
+    <!-- Character div -->
+    <div id="character-div">
+        <div id="character-text">Hello! Let's explore this forest and learn about conservation!</div>
+        <img id="character" src="img/link_down.png" alt="Explorer character">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
